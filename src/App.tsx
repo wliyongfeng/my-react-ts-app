@@ -10,9 +10,15 @@ export function Test() {
             onClick={async () => {
                 try {
                     const { app } = await Ledger.initialise("dot");
-                    console.log("hello world", app);
-                    const result = await Ledger.getVersion(app);
-                    console.log("result", result);
+
+                    // const addrResult = await Ledger.getAddress(app, 0, 0);
+                    // console.log("addrResult", addrResult);
+
+                    const versionResult = await Ledger.getVersion(app);
+                    console.log("versionResult", versionResult);
+
+                    // const result = await Ledger.signPayload(app, 0, '<bytes>hello</bytes>');
+                    // console.log("result", result);
                 } catch (e) {
                     console.error(e);
                     await Ledger.ensureClosed();
