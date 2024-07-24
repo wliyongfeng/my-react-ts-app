@@ -10,7 +10,7 @@ export function Test() {
             onClick={async () => {
                 try {
                     const { app } = await Ledger.initialise("dot");
-                    console.log("fuck world", app);
+                    console.log("hello world", app);
                     const result = await Ledger.getVersion(app);
                     console.log("result", result);
                 } catch (e) {
